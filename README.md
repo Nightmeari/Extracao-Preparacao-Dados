@@ -2,6 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Status](https://img.shields.io/badge/status-em%20andamento-yellow)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 Repositório com materiais, códigos e exercícios da disciplina **Extração e Preparação de Dados (2026/1)** do curso de **Ciência de Dados e Inteligência Artificial (IBMEC)**.
 
