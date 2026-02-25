@@ -1,0 +1,1760 @@
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Disentangling Text and Math in Word Problems: Evidence for the Bidimensional Structure of Large Language Models' Reasoning</title>
+				<funder ref="#_tKK3qdF #_e8g6BY4">
+					<orgName type="full">National Science Foundation</orgName>
+					<orgName type="abbreviated">NSF</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">CAPES</orgName>
+				</funder>
+				<funder ref="#_BvkVnaC">
+					<orgName type="full">Fapemig</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Brazilian agencies CNPq</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Google and Microsoft</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Pedro</forename><surname>Calais</surname></persName>
+							<email>pcalais@dcc.ufmg.br</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Boston University</orgName>
+								<orgName type="institution" key="instit2">Boston University</orgName>
+								<orgName type="institution" key="instit3">Boston University</orgName>
+								<orgName type="institution" key="instit4">Boston University</orgName>
+								<orgName type="institution" key="instit5">Boston University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Gabriel</forename><surname>Franco</surname></persName>
+							<email>gvfranco@bu.edu</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Boston University</orgName>
+								<orgName type="institution" key="instit2">Boston University</orgName>
+								<orgName type="institution" key="instit3">Boston University</orgName>
+								<orgName type="institution" key="instit4">Boston University</orgName>
+								<orgName type="institution" key="instit5">Boston University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Zilu</forename><surname>Tang</surname></persName>
+							<email>zilutang@bu.edu</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Boston University</orgName>
+								<orgName type="institution" key="instit2">Boston University</orgName>
+								<orgName type="institution" key="instit3">Boston University</orgName>
+								<orgName type="institution" key="instit4">Boston University</orgName>
+								<orgName type="institution" key="instit5">Boston University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Themistoklis</forename><surname>Nikas</surname></persName>
+							<email>tnikas@bu.edu</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Boston University</orgName>
+								<orgName type="institution" key="instit2">Boston University</orgName>
+								<orgName type="institution" key="instit3">Boston University</orgName>
+								<orgName type="institution" key="instit4">Boston University</orgName>
+								<orgName type="institution" key="instit5">Boston University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wagner</forename><surname>Meira</surname><genName>Jr</genName></persName>
+							<email>meira@dcc.ufmg.br</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Boston University</orgName>
+								<orgName type="institution" key="instit2">Boston University</orgName>
+								<orgName type="institution" key="instit3">Boston University</orgName>
+								<orgName type="institution" key="instit4">Boston University</orgName>
+								<orgName type="institution" key="instit5">Boston University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><surname>Ufmg</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Boston University</orgName>
+								<orgName type="institution" key="instit2">Boston University</orgName>
+								<orgName type="institution" key="instit3">Boston University</orgName>
+								<orgName type="institution" key="instit4">Boston University</orgName>
+								<orgName type="institution" key="instit5">Boston University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Evimaria</forename><surname>Terzi</surname></persName>
+							<email>evimaria@bu.edu</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Boston University</orgName>
+								<orgName type="institution" key="instit2">Boston University</orgName>
+								<orgName type="institution" key="instit3">Boston University</orgName>
+								<orgName type="institution" key="instit4">Boston University</orgName>
+								<orgName type="institution" key="instit5">Boston University</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mark</forename><surname>Crovella</surname></persName>
+							<email>crovella@bu.edu</email>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Boston University</orgName>
+								<orgName type="institution" key="instit2">Boston University</orgName>
+								<orgName type="institution" key="instit3">Boston University</orgName>
+								<orgName type="institution" key="instit4">Boston University</orgName>
+								<orgName type="institution" key="instit5">Boston University</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Disentangling Text and Math in Word Problems: Evidence for the Bidimensional Structure of Large Language Models' Reasoning</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">432A339C149BAC55CE7C746C347B5CF9</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2026-02-23T13:42+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p><s>Do large language models (LLMs) process text and mathematics as a unified skill, or do these components rely on distinct underlying mechanisms?</s><s>We investigate this question by disentangling the textual interpretation and mathematical solving steps in math word problems drawn from Brazil's largest college entrance exam (ENEM) and GSM8K, a popular grade school-level benchmark.</s><s>Using the symbolic solver SymPy, we transform word problems into equivalent purely mathematical representations, isolating equation formulation from textual comprehension.</s><s>Our extended benchmarks enable a structured analysis of LLM performance across these two dimensions.</s><s>Through empirical evaluations, we find that small-scale LLMs struggle significantly more with text interpretation than with equation solving, with accuracy dropping by a factor of 2 to 7 when solving full word problems compared to their mathonly counterparts.</s><s>Exploratory factor analysis confirms a bidimensional structure in LLM reasoning, where models exhibit distinct proficiencies in textual and mathematical components, underscoring the need for targeted improvements in language comprehension.</s><s>Through factor analysis, we provide insights into model selection, helping practitioners make informed choices based on computational costs and task requirements.</s></p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p><s>Math word problems represent a crucial category of cognitive tasks evaluated in large language models, requiring decomposing complex textual descriptions into smaller components and applying systematic logical reasoning, typically over multiple steps <ref type="bibr" target="#b37">(Strohmaier et al., 2022;</ref><ref type="bibr" target="#b52">Zhu et al., 2022)</ref>.</s><s>An example of a math word problem is the famous baseball bat and ball cost brain teaser <ref type="bibr" target="#b23">(Leron and Hazzan, 2009)</ref>: A baseball bat and ball together cost one dollar and 10 cents.</s><s>The bat costs one dollar more than the ball.</s><s>How much does the ball cost?.</s><s>Arriving at the correct answer requires two steps: (1) interpreting the problem expressed in natural language, which involves extracting and relating variables to build the mathematical equation x + (1 + x) = 1.10, and (2) solving the equation using mathematical reasoning, where the linguistic details are no longer relevant.</s></p><p><s>Motivated by educational research showing that humans need a combination of cognitive skills to solve math word problems <ref type="bibr" target="#b8">(Daroczy et al., 2015;</ref><ref type="bibr" target="#b37">Strohmaier et al., 2022)</ref>, we pose two research questions: (1) How frequently do small-scale language models err in equation construction compared to equation solving?</s><s>(2) Do different language models exhibit systematic differences in their ability to construct equations versus solve them?</s><s>These questions are important for NLP because they help characterize the limitations of language models in real-world analytical problems, which come in textual, not math forms.</s></p><p><s>While correctly answering a math word problem suggests that a model possesses the necessary skills (though guessing remains a possibility), incorrect answers can stem from different sources: an error in interpreting the question and building the underlying mathematical equation, an error in solving the equation, or both.</s><s>To decompose these sources of errors, we extend existing benchmarks containing word problems to include each problem in their math form, in which the textual interpretation and formulation of the underlying equation has already been conducted.</s><s>In the baseball ball price problem, once the story-based question has been understood and the variables identified, it can be translated into a purely mathematical problem: Solve x + (1 + x) = 1.10.</s><s>When a human or AI is presented with this version of the problem, it does not have to account for implicit details or linguistic ambiguities but must still demonstrate mathematical reasoning in solving a linear equation.</s><s>Conversely, when faced with the original word problem, both humans and AIs can struggle to construct the correct equation.</s><s>It is common for college-level students to misinterpret the problem and construct the incorrect equation x+1.00 = 1.10, leading to the wrong answer of 0.10 instead of 0.05.</s></p><p><s>We use word problems sampled from two sources containing problems of different difficulty levels: (1) 40 questions extracted from the largest Brazilian college admission-level math exam (ENEM), which tests highly analytical capabilities <ref type="bibr" target="#b1">(Almeida et al., 2023)</ref>, and (2) an equalsized sample from GSM8K <ref type="bibr" target="#b6">(Cobbe et al., 2021)</ref>, a popular benchmark containing grade-school level (and hence easier) word problems.</s><s>To systematically convert word problems into their pure-math equivalents, we leverage Python's symbolic solver SymPy <ref type="bibr" target="#b28">(Meurer et al., 2017)</ref>.</s><s>We use a state-of-theart generative language model (gpt-4-turbo-2024-04-09) to generate the SymPy source code that represents the underlying mathematical structure of each problem.</s><s>This symbolic representation serves as the basis for formulating the pure-math version of the question, removing any linguistic interpretation challenges.</s><s>After constructing extended benchmarks based on ENEM and GSM8K and evaluating 35 models from different families in different versions and stages of fine-tuning and with zero-shot and two-shot chain-of-thought prompts, our findings are:</s></p><p><s>• For both grade-school and especially college entrance levels, language models struggle more with the textual interpretation step than with the mathematical step.</s><s>In a typical question, errors in its textual version range from 2 to 7 times higher than in the pure-math form.</s></p><p><s>• The relative difficulty of questions in the math vs. word forms varies significantly in different benchmarks.</s><s>This highlights how benchmarks that test the same type of broad class of problems ("math word problems") can actually evaluate different aspects of the models; some benchmarks may demand more math capabilities and others, textual interpretation.</s></p><p><s>• Exploratory factor analysis <ref type="bibr" target="#b13">(Finch, 2013)</ref> unveils two latent factors that align strongly with text vs. math ability, indicating distinct skill profiles in small-scale language models: Some models excel at solving pure-math problems but struggle with word problems, while a smaller subset of models demonstrate strong performance in both areas.</s><s>We show that factor analysis is a powerful tool for comparing models and prompt variations beyond simple accuracy metrics.</s><s>By analyzing multiple variations of different versions of models from the same family, we can track their evolution over time and pinpoint whether a new version introduces a fundamentally new skill.</s></p><p><s>In addition to making the extended benchmarks publicly available to encourage further research, our work aligns with the growing trend of designing controlled benchmarks that test specific capabilities of language models by systematically varying key features of the problem space.</s><s>This approach enables more nuanced analyses beyond accuracy <ref type="bibr">(Burnell et al., 2023b)</ref> and increases the relevance and informative power of benchmarking efforts (v.</s><s><ref type="bibr" target="#b43">Kistowski et al., 2015)</ref>.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Related Work</head><p><s>In educational assessments, a word problem is a mathematical or logical problem presented as a narrative rather than a direct mathematical equation <ref type="bibr" target="#b44">(Verschaffel et al., 2020)</ref>.</s><s>Math word problems require test-takers to identify explicit and implicit quantities in the text, model their relationships through mathematical operations, and apply appropriate mathematical techniques to solve them <ref type="bibr" target="#b22">(Koncel-Kedziorski et al., 2016)</ref>.</s><s>These characteristics make word problems a compelling way to evaluate the reasoning and problem-solving capabilities of AI models, attracting the NLP community for some decades <ref type="bibr" target="#b32">(Roy et al., 2015;</ref><ref type="bibr" target="#b4">Cheng et al., 2025)</ref>.</s></p><p><s>With the rise in popularity of large language models, benchmarks such as GSM8K <ref type="bibr" target="#b6">(Cobbe et al., 2021)</ref> and MATH <ref type="bibr" target="#b17">(Hendrycks et al., 2021)</ref> have become popular choices for assessing model performance, as they provide structured problem sets with varying levels of complexity.</s><s>To elucidate reasons that make language models fail, there is a growing trend in AI evaluation that designs benchmarks that systematically vary key features of problem formulations to enable a more nuanced analysis <ref type="bibr">(Burnell et al., 2023b)</ref>.</s><s>Controlled benchmarks have explored different aspects, including the inclusion of distracting contextual information <ref type="bibr" target="#b18">(Hosseini et al., 2024;</ref><ref type="bibr" target="#b29">Mirzadeh et al., 2024)</ref>, variations in numerical representations <ref type="bibr" target="#b33">(Shen et al., 2023)</ref>, search space size <ref type="bibr" target="#b24">(Lin et al., 2025)</ref>, com-positional tasks <ref type="bibr" target="#b10">(Dziri et al., 2024)</ref> and asking the LLM whether a given solution is correct <ref type="bibr">(Zhang et al., 2024a)</ref>.</s><s>A critical aspect of those workswhich we build upon -is that accuracy as an aggregate metric is not enough to understand reasoning and hence strategies that evaluate step-specific errors are crucial <ref type="bibr" target="#b14">(Gaur and Saunshi, 2023;</ref><ref type="bibr" target="#b51">Zheng et al., 2024;</ref><ref type="bibr" target="#b48">Yan et al., 2024;</ref><ref type="bibr" target="#b46">Xia et al., 2024)</ref>.</s></p><p><s>Our work introduces a new controlled dimension to LLM evaluation: comparing model performance on textual vs. symbolic representations of math word problems.</s><s>Recent work has used LLMs to generate word problems <ref type="bibr" target="#b47">(Xie et al., 2024;</ref><ref type="bibr" target="#b0">Akyürek et al., 2023;</ref><ref type="bibr" target="#b5">Christ et al., 2024)</ref>; in this work we are interested in systematically converting existing word problems into their equivalent mathematical equations using Python's symbolic solver, SymPy <ref type="bibr" target="#b28">(Meurer et al., 2017)</ref>.</s><s>This structured transformation allows for a controlled comparison of language model performance across different representations of the same underlying problem.</s><s>While previous studies have used symbolic solvers to assist language models in solving word problems <ref type="bibr" target="#b16">(He-Yueya et al., 2023;</ref><ref type="bibr" target="#b21">Kao et al., 2024)</ref>, to the best of our knowledge we are the first to leverage symbolic solvers to construct a controlled benchmark that enables direct comparison between textual and symbolic problem representations in LLM evaluation.</s></p><p><s>Our work is also inspired by studies on the behavior and skills that humans need to solve math word problems <ref type="bibr" target="#b8">(Daroczy et al., 2015;</ref><ref type="bibr" target="#b37">Strohmaier et al., 2022)</ref>.</s><s>The reasons that make word problems challenging for humans have been thoroughly investigated <ref type="bibr" target="#b8">(Daroczy et al., 2015;</ref><ref type="bibr" target="#b20">Jaffe and Bolger, 2023)</ref>, and it is accepted in the educational community that linguistic and mathematical factors are distinct, unique skills that contribute to student performance <ref type="bibr" target="#b45">(Vessonen et al., 2024;</ref><ref type="bibr" target="#b31">Pongsakdi et al., 2020)</ref>.</s><s>Recent work has examined word problem characteristics impacting LLMs and found that they struggle more with longer questions and rare numerical tokens <ref type="bibr" target="#b36">(Srivatsa and Kochmar, 2024)</ref>.</s><s>In our work, we deepen the analysis on how large language models solve word problems by applying exploratory factor analysis <ref type="bibr" target="#b13">(Finch, 2013;</ref><ref type="bibr" target="#b27">Lorenzo-Seva and Ferrando, 2006)</ref>, a dimensionality reduction technique widely used in the social sciences to uncover latent patterns in complex datasets.</s><s>While at least one study has employed factor analysis to examine LLM response patterns-finding that reasoning, comprehension, and language modeling are distinct high-level capabilities in LLMs <ref type="bibr">(Burnell et al., 2023a)</ref>-our study extends this approach by leveraging a fine-grained, question-level annotation of each problem (whether it is in the math or word form).</s><s>This approach allows us to quantify latent cognitive dimensions that differentiate model performance across textual and symbolic formats, providing deeper insight into how LLMs engage with different types of problem representations.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Benchmarks</head><p><s>We have built two benchmarks following the same methodology but with a different source of word problems.</s><s>The first source is GSM8K <ref type="bibr" target="#b6">(Cobbe et al., 2021)</ref> <ref type="foot" target="#foot_0">foot_0</ref> , which contains grade school-level problems and has been used by many previous work evaluating language models <ref type="bibr" target="#b25">(Liu et al., 2023)</ref>.</s><s>GSM8K is a source of prototype word problems, in which mathematical word problems follow a simple, linear syntax and are relatively short <ref type="bibr" target="#b37">(Strohmaier et al., 2022;</ref><ref type="bibr" target="#b29">Mirzadeh et al., 2024)</ref>.</s></p><p><s>To explore questions that involve more complex interactions between text interpretation and mathematical reasoning, we used the Math section of the Brazilian Exame Nacional do Ensino Médio (ENEM) as a source of complex word problems, characterized by presenting potentially redundant information in a syntax that does not merely mirror the mathematical task <ref type="bibr" target="#b38">(Strohmaier, 2020)</ref>.</s><s>ENEM is the world's second-largest university entrance exam after China's Gaokao, taken annually by millions of Brazilian students (Silveira and Mauá, 2018), and Mathematics is consistently the most challenging section for both human test-takers and language models, with scores around 30% <ref type="bibr" target="#b26">(Locatelli et al., 2024)</ref>.</s><s>According to the official documentation (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira, 2025), the exam assesses geometric reasoning, magnitudes and measurement interpretation, data analysis from graphs and tables, and trend prediction through extrapolation and interpolation.</s><s>A typical ENEM word problem is shown below:</s></p><p><s>The subway system in a municipality offers two types of tickets, differentiated by their colors: blue and red.</s><s>These tick-ets are sold in booklets, each containing nine tickets of the same color and with the same unit price.</s><s>Two booklets of blue tickets and one booklet of red tickets are sold for R$ 32.40.</s><s>It is known that the price of one blue ticket minus the price of one red ticket is equal to the price of one red ticket plus five cents.</s><s>What is the price, in reais, of a booklet of red tickets?</s></p><p><s>Transforming the word question in its pure math form.</s></p><p><s>Starting from the observation that word problems require building a mathematical equation as a well-recognized subproblem <ref type="bibr" target="#b8">(Daroczy et al., 2015)</ref>, we leverage the symbolic solver SymPy 2 <ref type="bibr" target="#b28">(Meurer et al., 2017)</ref> to generate mathematical unambiguous representations of word problems.</s><s>This is how the subway ticket problem is modeled and solved using SymPy: We then submit a new prompt to GPT-4 instructing it to convert the SymPy code into a question in the format "Solve... &lt;equation&gt;.,"</s><s>where all known variables are replaced with their actual values, and only the unknowns are retained.</s><s>For the subway ticket ENEM word problem, the equivalent math formulation generated from the SymPy code above is Solve 9*r from 18b + 9r = 32.40 and br = r + 0.05.</s><s>A key advantage of using SymPy is its enforcement of a structured and precise format for mathematical expressions, eliminating unnecessary linguistic details and focusing solely on the mathematical formulation.</s></p><p><s>To construct the extended benchmark, we considered 40 ENEM math questions from exams spanning 2016 to 2024, using GPT-4 to generate their corresponding SymPy representations, yielding a total of 80 questions.</s><s>We selected questions randomly to ensure diversity regarding difficulty and 2 Version 1.12.</s><s>problem type, excluding those requiring images or tables to focus on language-based mathematical reasoning.</s><s>The questions were translated into English using GPT-4 before the SymPy pipeline.</s><s>To validate correctness, we executed the generated SymPy code and verified that it produced the expected answer.</s><s>We manually reviewed and curated the SymPy representations to ensure accuracy and fidelity to the original problems.</s><s>The same process has been conducted with GSM8K; the full prompts can be found in Appendix A, and examples of questions in their word and math forms can be found in Appendix B.</s></p><p><s>There is ongoing debate regarding the efficacy of multiple-choice versus open-ended questions for assessing reasoning abilities <ref type="bibr">(Zhang et al., 2024b)</ref>.</s></p><p><s>We opted for open-ended responses to eliminate the confounding effect of random guessing in multiplechoice formats.</s><s>This ensures cleaner signal integrity in our analysis, reducing noise and enabling more precise evaluation of model reasoning.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Accuracy in word and math forms</head><p><s>We evaluate 35 models, focusing on small language small language models to small-scale large language models (1.5B, 3B, 7B, 14B), across 9 families (Gemini, Qwen, Falcon, Phi, Mistral, Gemma, Llama, NuminaMath, distilled versions of DeepSeek-R1) and training strategies (pre-trained vs. fine-tuned).</s><s>We included multiple versions of the same family and also math-specialized models (e.g., Qwen2.5-Math-7B) to track model evolution over time.</s><s>The models were tested with 0-shot and 2-shot settings, using chain-of-thought prompt styles following prior work <ref type="bibr" target="#b18">(Hosseini et al., 2024)</ref>.</s><s>The prompt details and full list of models is provided in Appendixes A and C.</s></p><p><s>Differences across benchmarks.</s><s>Our first key investigation is how accuracy varies across question forms (word vs. math) for all models and for the two annotated benchmarks.</s><s>In Figure <ref type="figure" target="#fig_0">1</ref>, each datapoint represents a question (red is ENEM and blue, GSM8K), with its accuracy on the math and word forms plotted respectively on the x-and yaxes and averaged over all models and prompt combinations.</s><s>As expected, the deviations from the y = x line indicate that word problems are generally more challenging than their math counterparts.</s><s>Some non-obvious patterns emerge: both in terms of equation formulation and equation resolution.</s><s>The median accuracy on the math version of college-admission problems (ENEM) is around 0.5, compared to 0.8 for grade-level problems.</s><s>In the word forms, accuracy is around 0.1 for college-entrance and 0.5 for grade-level.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">The clear separation of ENEM and GSM8K</head><p><s>datapoints in the scatter plot, with a small overlap region, suggests that the nature of the questions differs between the two exams and, based on the accuracy on the word and math forms of a question, the exam it belongs to could be predicted.</s><s>We look at the specific characteristics of questions in Section 5.</s></p><p><s>3. In the college-admission ENEM exam, accuracy varies significantly across the difficulty of the math form (from 0.3 to 0.8), but the accuracy considering the word forms is concentrated around 0.1 to 0.2.</s></p><p><s>Figure <ref type="figure" target="#fig_0">1</ref>: Differences in accuracy between math and word forms for all questions.</s><s>For the models we experimented with, college-admission questions tend to be harder both in their word and math forms.</s></p><p><s>We can compute several descriptive statistics that summarize Figure <ref type="figure" target="#fig_0">1</ref> and highlights the differences between the two benchmarks.</s><s>In Table <ref type="table" target="#tab_0">1</ref>, the lower Pearson and Spearman correlations in the ENEM exam means that the accuracy in math form is a poorer predictor of accuracy in the word form and vice-versa; the lower harmonic mean points to higher variability, possibly due to linguistic complexity or differences in problem structure.</s><s>In GSM8K, the difficulty of the questions is more stable across formats and questions are closer to y = x, indicating that models generally maintain similar accuracy when switching from mathematical notation to word problems and performance is more balanced.</s><s>Differences across models.</s><s>Figure <ref type="figure" target="#fig_1">2</ref> focuses on the aggregate accuracy of individual models when presented with the different forms of the math word problems.</s><s>At the extremes, the highest-and lowestperforming models on word problems show similar accuracy regardless of the form, and greater disparities are observed in models exhibiting average performance.</s><s>The blue datapoints, representing models evaluated on GSM8K, tend to be closer to the y = x line, indicating that the word-tomath translation step in GSM8K is easier when compared with ENEM.</s><s>These findings, together with the per-question breakdown in Figure <ref type="figure" target="#fig_0">1</ref> and the metrics in Table <ref type="table" target="#tab_0">1</ref>, provide valuable insights for researchers and practitioners: depending on whether their focus is on language understanding or on pure mathematical reasoning, they can make more informed choices when selecting an appropriate benchmark that will demand from models more abilities on one skill or another, and also put special focus on specific questions that are more challenging either in their textual or mathematical components.</s></p><p><s>We also investigated the impact of the prompt choice in model performance in the word and math forms of the questions.</s><s>In Figure <ref type="figure" target="#fig_2">3</ref>, for ENEM, we see that chain-of-thought prompts improve math forms disproportionally more than the word forms; we see this pattern as evidence that the word forms demands a higher level of reasoning that chain-ofthought typically cannot reach.</s></p><p><s>Finally, to further investigate model performance, Figure <ref type="figure" target="#fig_3">4</ref> ranks models by accuracy on ENEM's word form of the exam.</s><s>A clear pattern emerges: while accuracy in the word form exam declines sharply for most models, some maintain strong performance on math forms.</s><s>Notably, the blue (math) and orange (word) bars are not strongly  correlated -some models achieve high math accuracy but struggle with word problems.</s><s>This disparity suggests the presence of uncorrelated latent factors influencing language model performance on word problems, motivating the factor analysis we conduct in the next section.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Exploratory Factor Analysis</head><p><s>In pyschometrics, determining the dimensionality of an instrument is an important step towards assessing its validity and reliability.</s><s>It informs whether the instrument measures one or multiple constructs, how its scores should be interpreted, and which models such as Item Response Theory apply <ref type="bibr" target="#b15">(Gustafsson and Åberg-Bengtsson, 2010)</ref>.</s></p><p><s>Unidimensional instruments (i.e., those measuring a single construct) tend to have high internal consistency because all items are strongly correlated with the same underlying factor.</s><s>A popular metric is Cronbach's Alpha (α) <ref type="bibr" target="#b7">(Cronbach, 1951)</ref>, which measures the internal consistency of a set of items by calculating the average correlation between all pairs of items and considering how each item contributes to the overall variance of the test scores.</s><s>For the ENEM and GSM8K we found α of 0.972 and 0.978, respectively, indicating very high internal consistency and minimal random error.</s><s>The high consistency we found supports that the size of our benchmarks is enough for our study and is consistent with previous work that found that large benchmarks such as GSM8K, albeit containing thousands of items, can be reduced to a few dozen itens and keep a good degree of discrimination among LLMs <ref type="bibr" target="#b30">(Polo et al., 2024)</ref>.</s></p><p><s>However, an instrument exhibiting high internal consistency is not necessarily unidimensional: multidimensional scales can still produce high α values if its items form strongly correlated subcomponents <ref type="bibr" target="#b39">(Taber, 2018;</ref><ref type="bibr" target="#b41">Tavakol and Dennick, 2011)</ref>.</s><s>This observation, alongside the findings in Section 4, motivates conducting exploratory factor analysis -a well-established method for testing the dimensionality of an instrument <ref type="bibr" target="#b40">(Tate, 2003)</ref>.</s><s>The goal is to identify distinct skills or dimensions that may underlie the observed variables.</s><s>We employed the software Factor (Ferrando and <ref type="bibr" target="#b12">Lorenzo-Seva, 2017)</ref>, selecting unweighted least squares as the estimation method and using promax rotation.</s><s>To determine the optimal number of factors that represent the data, we used parallel analysis, which compares the eigenvalues derived from the actual data with those from random datasets generated under equivalent conditions.</s><s>Factors with eigenvalues exceeding those of the random data are considered significant, suggesting they account for meaningful variance (Timmerman and <ref type="bibr" target="#b42">Lorenzo-Seva, 2011)</ref>.</s></p><p><s>Our experiments revealed two statistically significant factors on both benchmarks.</s><s>Details are provided in Table <ref type="table" target="#tab_1">2</ref>. Kaiser-Meyer-Olkin (KMO) is a measure of sampling adequacy of the data; values above 0.70 are considered suitable for factor analysis <ref type="bibr" target="#b34">(Shrestha, 2021)</ref>.</s><s>Note that in both benchmarks, the KMO value is within an acceptable range, the factors explain about 40% of the variance in the data, and they are positively correlated.</s><s>For each benchmark, we calculate the proportion of word/math questions whose factor of highest loading is either factor F1 or factor F2 and also the average accuracy for the questions that are assigned to each (Table <ref type="table" target="#tab_3">3</ref>).</s><s>Notably, in ENEM, there is a strong connection between factors and question types.</s><s>While 85% of math questions align more closely with Factor F1, 80% of word questions are more strongly linked to Factor F2.</s><s>Furthermore, the average accuracy on questions falling into F2 is roughly half of those linked to F1.</s><s>Those numbers, in accordance to results in Section 4, suggest that language models possess distinct capabilities.</s><s>We label F1 as the equation resolution skill, and F2 as the text interpretation skill.</s><s>On GSM8K, all math-form questions load onto the first factor, whereas easier and harder word problems are split between the two factors.</s><s>These results suggest that, in GSM8K, translating some word problems into their mathematical form is straightforward, while others require greater capacity to extract explicit and implicit quantities from the text.</s><s>This kind of distinction can aid how practitioners inspect and debug their question-answering applications.</s></p><p><s>Factor scores.</s><s>Do specific versions of a family of models possess different problem-solving skills?</s><s>To answer that question, we resort to factor scores <ref type="bibr" target="#b9">(DiStefano et al., 2019)</ref>, which are numerical values representing an observation's position on the latent factors identified through factor analysis.</s><s>These scores are derived from observed variable scores and factor loadings, providing a way to es-timate the contribution of each factor to a specific case.</s><s>In Table <ref type="table" target="#tab_5">5</ref> we show factor scores for a selection of the model families doing the ENEM exam; the complete table can be consulted at Appendix C. Next, we highlight some nuances and judgments that can be made by examining factor scores, which aggregate accuracy metrics often overlook.</s></p><p><s>• Gemini: The evolution of factor scores for the Gemini family of models demonstrates that Gemini 2.0-Flash has greater generalization capability compared to earlier versions: while Gemini 1.5-Flash required more elaborately crafted prompts to solve pure math problems (F1), Gemini 2.0-Flash generalizes better by maintaining a high capacity for solving problems in their mathematical form, regardless of the prompting strategy.</s><s>Additionally, there is a clear progression across versions in the ability to solve word problems (F2).</s></p><p><s>• Qwen: First, we see that moving from Qwen-2.5-7B-Instruct to Qwen-2.5-14B-Instruct</s><s>does not improve the model's capacity for solving problems in their pure math forms (F1); it had already reached a plateau of around 12 in the 7B version.</s><s>However, we observe a moderate increase in its ability to solve problems that require equation formulation (F2).</s><s>Factor scores also highlight the impact of the instruct and math-specialized versions of Qwen: not only are they more consistent in solving pure math problems, but they have also developed a higher capacity for solving word problems, despite sharing the same size as Qwen-2.5-7B.</s></p><p><s>• Distilled versions of DeepSeek-R1: Regardless of the teacher model and the prompt, distilled DeepSeek-R1 models still need to improve in solving word problems, although they are already capable of solving pure math problems at the college-admission level.</s></p><p><s>Explaining factors.</s><s>Recent work has looked at the characteristics that make word problems harder for language models (Srivatsa and Kochmar, 2024).</s><s>We can extend this kind of analysis by investigating if there are characteristics that link a question to either F1 or F2.</s><s>Notably, in word forms, additional tokens, terms, operators, and equation depth have a greater impact on the overall difficulty of the question.</s><s>For example, while questions in their mathematical form are linked to F2 when they contain, on average, 13.67 terms, in word form, just 9.13 terms are sufficient.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Conclusions</head><p><s>Analytical problems require multiple capabilities, including understanding the problem statement and extracting and solving a mathematical model.</s><s>To disentangle natural language understanding from pure mathematical reasoning, we used the symbolic solver SymPy to introduce extended versions of benchmarks (Brazilian ENEM and GSM8K) that present math word problems in both word-based forms and mathematical components only.</s></p><p><s>Through structured problem reformulation and factor analysis of 35 large language models, we found that while pure mathematical problemsolving skills are relatively common, only a subset of small-scale language models can effectively handle word problems requiring both interpretation and mathematical modeling.</s><s>Our work contributes to the growing body of research focused on developing benchmarks that test specific model capabilities by systematically varying key features <ref type="bibr">(Burnell et al., 2023b)</ref>, and, as models become more multi-modal and diverse in their reasoning capabilities, factor analysis can play a larger role as part of language model evaluation frameworks.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Reproducibility</head><p><s>The source code, the questions in their word and math forms, the prompts and the full output of factor analysis are available at <ref type="url" target="http://www.dcc.ufmg.br/~pcalais/papers/facl-2025-data">http://www.dcc. ufmg.br/~pcalais/papers/facl-2025-data</ref>.</s><s>The extended benchmarks are available for use in the same research contexts as their original versions.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8">Limitations</head><p><s>While our study provides evidence supporting a bidimensional structure of reasoning in small-scale large language models, some limitations should be noted.</s></p><p><s>First, our dataset construction relies on a symbolic solver to generate problem formulations that isolate mathematical reasoning from textual interpretation.</s><s>Although this approach ensures a controlled separation of these components, complete disentanglement is difficult, as creating the underlying equation that represents the problem still requires some mathematical modeling (e.g., recognizing that the formula for the area of a circle applies in a given scenario).</s></p><p><s>Second, our analysis is limited to the GSM8K and Brazilian ENEM benchmarks, which contain grade-school and high-school level questions, respectively.</s><s>To further explore the problem space, future work should consider advanced college-level mathematics, covering topics such as differential and integral calculus <ref type="bibr" target="#b11">(Fan et al., 2024)</ref>.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="9">Ethical Considerations</head><p><s>In the context of solving math word problems, our findings may have broader implications.</s><s>Large language models could be misused for purposes such as automating academic dishonesty or generating misleading solutions in academic or professional settings.</s><s>There is also a risk that, due to the LLMs' difficulties with interpreting text, they may produce erroneous or misleading answers that could be misused, especially in critical areas like education or finance.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.1 Generating math forms of word problems</head><p><s>We leverage SymPy <ref type="bibr" target="#b28">(Meurer et al., 2017)</ref> and two prompts to convert a word problem into its equivalent math form.</s><s>First, we submit a prompt that generates the SymPy source code that solves the problem, as in the example:</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SymPy code generation</head><p><s>Generate SymPy code that solves the following math word problem:</s></p><p><s>In the year a company launched its new smartphone model in the Brazilian market, it invested 45 million reais in the first semester in each of the five regions of the country, offering 30,000 devices for sale in each region.</s><s>In the first semester, all the devices offered were sold, generating a total profit of 30 million reais.</s><s>In the second semester, the company decided to make the same investment and offer the same quantities of devices per region.</s><s>Due to the observed demand, the company assumed that all the devices of this model offered would be sold, and in addition, it planned to achieve a total profit 10% higher in the second semester than in the first.</s><s>For the company to achieve the planned profit, what should the selling price, in reais, of a smartphone of this model be in the second semester of that year?</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Output</head><p><s>The question based on the given SymPy code would be: Solve 150000 × p 2 -225000000 = 33000000, where p 2 is the price in the second semester.</s></p><p><s>We manually validate that both the source code and the math form version of the word problem produces the correct answer, and make small adjustments to strip language details that are unnecessary to the question, like the explanation of the semantics of p 2 in the example, which is not required to solve the problem.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A.2 Question-solving prompts</head><p><s>We used the same prompt style as <ref type="bibr" target="#b18">(Hosseini et al., 2024)</ref>.</s><s>Here as examples of 0-shot, 2-shot, 0shot-CoT and 2-shot-CoT prompts.</s><s>Note that the chain-of-thought prompts explicitly ask the model to think step by step.</s><s>Q: There are 15 trees in the grove.</s><s>Grove workers will plant trees in the grove today.</s><s>After they are done, there will be 21 trees.</s><s>How many trees did the grove workers plant today?</s><s>A: There are 15 trees originally.</s><s>Then there were 21 trees after some more were planted.</s><s>So there must have been 21 -15 = 6.</s><s>The final answer is 6.</s><s>Q: There are 15 trees in the grove.</s><s>Grove workers will plant trees in the grove today.</s><s>After they are done, there will be 21 trees.</s><s>How many trees did the grove workers plant today?</s><s>A: There are 15 trees originally.</s><s>Then there were 21 trees after some more were planted.</s><s>So there must have been 21 -15 = 6.</s><s>The final answer is 6.</s></p><p><s>Q: If there are 3 cars in the parking lot and 2 more cars arrive, how many cars are in the parking lot?</s><s>A: There are originally 3 cars.</s><s>2 more cars arrive.</s><s>3 + 2 = 5.</s><s>The final answer is 5. Q: &lt;question&gt; A:</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B Question examples</head><p><s>We show five examples of questions from ENEM and GSM8K in their word (original) and math versions.</s><s>To give a sense of the varying levels of difficulty in the benchmarks, we sorted the questions according to their accuracies in the word form and show the questions from each of the five quintiles, starting with the easiest question.</s><s>We also show the factor loadings associated to each question; notice that typically the word version of the question has a higher loading on F2, interpreted as the textual interpretation skill.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B.1 ENEM word form:</head><p><s>The goal is to buy lenses for glasses.</s><s>The lenses should have thicknesses as close as possible to 3 mm.</s><s>In a store's stock, there are lenses with the following thicknesses: 3.10 mm, 3.021 mm, 2.96 mm, 2.099 mm, and 3.07 mm.</s><s>If the lenses are purchased from this store, the chosen thickness, in millimeters, will be: math form: Determine the closest value, in absolute terms, to 3: 3.10, 3.021, 2.96, 2.099, 3.07.</s><s>answer: 3.021 factor loadings (word): F1 0.333, F2 0.304 factor loadings (math): F1 0.292, F2 0.293 word form: In a school, the probability that a student understands and speaks English is 30%.</s><s>Three students from this school, who are in the final phase of an exchange selection process, are waiting in a room to be called for an interview.</s><s>However, instead of calling them one by one, the interviewer enters the room and asks an oral question in English, which can be answered by any of the students.</s><s>The probability that the interviewer will be understood and have his question answered orally in English is math form: Calculate 1 -(1 -30/100) 3 .</s><s>answer: 0.657 factor loadings (word): F1 0.258, F2 0.372 factor loadings (math): F1 0.802, F2 -0.220 word form: The subway system in a municipality offers two types of tickets, differentiated by their colors: blue and red.</s><s>These tickets are sold in booklets, each containing nine tickets of the same color and with the same unit price.</s><s>Two booklets of blue tickets and one booklet of red tickets are sold for R$ 32.40.</s><s>It is known that the price of one blue ticket minus the price of one red ticket is equal to the price of one red ticket plus five cents.</s><s>What is the price, in reais, of a booklet of red tickets?</s><s>math form: Calculate 9 × y : 2 × 9 × x + 9 × y = 32.40 and xy = y + 0.05.</s><s>answer: 6.30 factor loadings (word): F1 -0.109, F2 0.797 factor loadings (math): F1 0.314, F2 0.441 word form: A building has floor numbers starting from the ground floor (T), continuing with the first, second, third, and so on, up to the top floor.</s><s>A child entered the elevator and, touching the panel, followed a sequence of floors, stopping, opening, and closing the door at various floors.</s><s>From where the child entered, the elevator went up seven floors, then down ten, down another thirteen, up nine, down four, and stopped at the fifth floor, completing the sequence.</s><s>Consider that, in the path followed by the child, the elevator stopped once on the top floor of the building.</s><s>Based on the given information, the top floor of the building is the math form: Solve for T the equation T + 7 -10 -13 + 9 -4 = 5 and then calculate T + 7.</s></p><p><s>answer: 23 factor loadings (word): F1 -0.272, F2 0.833 factor loadings (math): F1 0.155, F2 0.522 word form: According to data collected in the 2010 Census, for a population of 101.8 million Brazilians aged 10 or older who had some form of income in 2010, the average monthly income was R$ 1,202.00.</s><s>The total monthly income of the poorest 10% accounted for only 1.1% of the total income of this population, while the total monthly income of the richest 10% accounted for 44.5% of the total.</s><s>What was the difference, in reais, between the average monthly income of a Brazilian in the richest 10% and a Brazilian in the poorest 10%?</s></p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Listing 1 :</head><label>1</label><figDesc><div><p><s>SymPy code that solves the subway ticket problem.</s><s>import sympy as sp # Price of one blue and one red ticket b = sp .</s><s>Symbol ( 'b ') r = sp .</s><s>Symbol ( 'r ') eq1 = 2 * 9 * b + 9 * r -32.40 eq2 = b -r -( r + 0.05) solution = sp .</s><s>solve (( eq1 , eq2 ) , (b , r )) price_red_booklet = 9 * solution [ r ] solution , price_red_booklet</s></p></div></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc><div><p><s>Figure 2: Differences in accuracy between math and word forms for all models and prompt combinations.</s><s>Datapoint size is proportional to model size.</s></p></div></figDesc><graphic coords="6,70.86,49.63,239.50,179.62" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 :</head><label>3</label><figDesc><div><p><s>Figure 3: Density plot of the absolute difference in accuracy in math and word forms for ENEM.</s><s>2-shot-CoT disproportionately improves math questions.</s></p></div></figDesc><graphic coords="6,65.35,271.19,223.79,167.84" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 :</head><label>4</label><figDesc><div><p><s>Figure 4: Accuracy by model, comparing performance on word and math questions on the ENEM exam.</s><s>Models are sorted by accuracy on the word-based exam.</s><s>While most models show a sharp decline in wordproblem accuracy, some retain strong performance on math problems.</s></p></div></figDesc><graphic coords="6,306.14,70.84,218.28,136.13" type="bitmap"/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head/><label/><figDesc><div><p><s>SymPy code is then used as an input for the next prompt: Math form generation I will give you a SymPy code and want you to produce a question in the following format: Solve &lt;equation&gt;, where &lt;equation&gt; is the equation contained in the SymPy code.</s><s>Make sure you replace all known variables by their values first.</s><s>Sympy code: import sympy as sp from sympy import symbols , Eq , solve # Define symbols p1 , p2 = symbols ( ' p1 ␣ p2 ') # Equation for first semester eq1 = Eq (150000 * p1 -225000000 , 30000000) # Solve for p1 ( price in the first semester ) p1_solution = solve ( eq1 , p1 )[0] # Equation for second semester eq2 = Eq (150000 * p2 -225000000 , 33000000) # Solve for p2 ( price in the second semester ) p2_solution = solve ( eq2 , p2 )[0] p2_solution</s></p></div></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head/><label/><figDesc><div><p><s>question.</s><s>When you respond, respond only with the Solution of the final Problem.</s><s>At the end of the Solution, when you give your final answer, write it in the form 'The final answer is AN-to give you a series of demonstrations of math Problems and Solutions.</s><s>When you respond, respond only with the Solution of the final Problem.</s><s>At the end of the Solution, when you give your final answer, write it in the form 'The final answer is ANSWER'.</s></p></div></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Q:</head><label/><figDesc><div><p><s>If there are 3 cars in the parking lot and 2 more cars arrive, how many cars are in the parking lot?</s><s>A: There are originally 3 cars.</s><s>2 more cars arrive.</s><s>3 + 2 = 5.</s><s>The final answer is 5. CoT prompt Answer the following question.</s><s>When you respond, respond only with the Solution of the final Problem.</s><s>When you respond, respond only with the Solution of the final Problem, thinking step by step.</s><s>At the end of the Solution, when you give your final answer, write it in the form 'The final answer is ANSWER'.</s><s>CoT prompt I am going to give you a series of demonstrations of math Problems and Solutions.</s><s>When you respond, respond only with the Solution of the final Problem, thinking step by step.</s><s>At the end of the Solution, when you give your final answer, write it in the form 'The final answer is ANSWER'.</s></p></div></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 :</head><label>1</label><figDesc><div><p><s>Metrics comparing GSM8K and ENEM according to math vs. word accuracy averages and correlations.</s></p></div></figDesc><table><row><cell>metric</cell><cell cols="2">GSM8K ENEM</cell></row><row><cell>Avg. word accuracy Avg. math accuracy Avg. harmonic mean Pearson correlation Spearman correlation Avg. distance to y = x</cell><cell>0.520 0.705 0.586 0.515 0.573 0.143</cell><cell>0.266 0.545 0.338 0.426 0.380 0.203</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 :</head><label>2</label><figDesc><div><p><s>Summary of factor analysis results.</s></p></div></figDesc><table><row><cell>metric</cell><cell cols="2">ENEM GSM8K</cell></row><row><cell>Kaiser-Meyer-Olkin (KMO) # of factors Proportion var. explained Correlation between factors</cell><cell>0.767 2 38.04% 0.708</cell><cell>0.791 2 43.48% 0.794</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head/><label/><figDesc><div><p><s>Table4shows how, on average, the features of the underlying equation associated with each problem vary according to the dominant factor and the question form, in the ENEM benchmark.</s></p></div></figDesc><table><row><cell>dominant factor</cell><cell>ENEM</cell><cell/><cell>GSM8K</cell><cell/></row><row><cell/><cell cols="2">F1 (equation resolution) F2 (text interpretation)</cell><cell>F1</cell><cell>F2</cell></row><row><cell>math</cell><cell>0.85 (avg. acc. 0.56)</cell><cell>0.15 (0.25)</cell><cell>1.00 (0.76)</cell><cell>0.00</cell></row><row><cell>word</cell><cell>0.20 (0.40)</cell><cell>0.80 (0.21)</cell><cell cols="2">0.55 (0.70) 0.45 (0.39)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 3 :</head><label>3</label><figDesc><div><p><s>Prevalence of question forms across dominant factors in each dataset.</s><s>Average accuracy is reported.</s><s>In ENEM, 85% of math questions load more heavily on F1, while 80% of word questions load more heavily on F2.</s><s>In GSM8K, all math questions load more heavily on F1.</s></p></div></figDesc><table><row><cell/><cell>Word</cell><cell/><cell cols="2">Math</cell></row><row><cell/><cell>F1</cell><cell>F2</cell><cell>F1</cell><cell>F2</cell></row><row><cell># of Tokens # of Terms # of Unique Operators Syntatic Tree Depth</cell><cell cols="3">82.25 130.00 15.82 4.75 9.13 7.29 2.50 3.13 2.82 3.25 4.62 4.18</cell><cell>31.0 13.67 4.00 5.33</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 4 :</head><label>4</label><figDesc><div><p><s>Average values for features of the underlying equations, according to the dominant factor of the questions in the ENEM dataset.</s><s>On average, questions that load more heavily on F2 are mapped to equations containing more tokens, more terms, more unique operators, and deeper syntactic trees.</s></p></div></figDesc><table/></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 5 :</head><label>5</label><figDesc><div><p><s>Factor scores for top performing families of models on the ENEM dataset.</s><s>Values greater than the median are highlighted.</s></p></div></figDesc><table><row><cell>model</cell><cell>prompt</cell><cell>F1</cell><cell>F2</cell><cell>acc.</cell></row><row><cell>gemini-2.0-flash-exp gemini-1.5-flash gemini-1.5-flash-8b gemini-1.0-pro</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot</cell><cell>11.3 11.24 11.3 11.3 4.18 6.69 9.05 10.9 3.24 12.14 3.8 11.52 4.96 7.31 5.43 8.06</cell><cell>12.76 12.26 12.76 12.76 7.05 8.33 9.8 8.45 0.41 5.37 0.95 5.38 1.18 2.17 0.48 1.65</cell><cell>76 74 76 76 37 52 53 62 19 58 19 55 21 33 22 31</cell></row><row><cell>Qwen2.5-14B-Instruct Qwen2.5-7B-Instruct Qwen2.5-Math-PRM-7B Qwen2.5-Math-7B-PRM800K Qwen2.5-7B Qwen2.5-Math-1.5B-Instruct Qwen2.5-3B-Instruct</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot</cell><cell>9.96 11.78 12.12 11.68 12.46 12.21 12.02 12.58 9.65 8.99 10.55 10.19 9.95 10.11 10.1 10.12 2.17 7.86 9.9 10.18 1.96 8.54 8.13 7.1 0.62 2.32 9.89 10.72</cell><cell>8.2 9.58 8.82 8.19 7.54 6.65 5.4 5.42 7.06 9.07 6.9 6.92 5.24 8.08 7.04 7.7 0.64 0.97 2.99 2.62 0.74 0.58 0.69 0.05 0.94 1.06 2.91 1.94</cell><cell>57 67 64 62 63 56 56 58 51 53 59 57 48 56 55 58 13 28 45 44 13 28 35 32 7 14 45 42</cell></row><row><cell>DeepSeek-R1-Distill-Qwen-14B DeepSeek-R1-Distill-Qwen-7B deepseek-math-7b-instruct DeepSeek-R1-Distill-Qwen-1.5B</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot</cell><cell>9.05 8.45 12.39 11.17 7.56 8.34 10.85 10.91 8.49 8.11 7.93 7.93 8.4 6.58 9.74 7.14</cell><cell>3.28 2.66 6.14 5.21 0.54 2.4 5.83 3.37 0.83 0.65 0.38 0.38 0.55 1.64 1.23 0.35</cell><cell>49 36 57 52 28 34 52 44 33 32 32 31 29 28 31 23</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head/><label/><figDesc><div><p><s>Solve 360 = 3 × rate, 240 = rate × time for time, where rate = 120.</s></p></div></figDesc><table><row><cell>factor loadings (math): F1 0.015, F2 0.350 C Factor Scores</cell><cell>0.732 factor loadings (word): F1 0.004, F2</cell></row><row><cell>B.2 GSM8K hours. At the same rate, how many addi-word form: A train travels 360 miles in 3 Models were run with default temperature in Google Colab Pro cloud computing service.</cell><cell>factor loadings (math): F1 0.420, F2 0.356</cell></row><row><cell>tional hours would it take to travel an addi-</cell><cell/></row><row><cell>tional 240 miles? math form: answer: 2</cell><cell>word form: Bill gets paid $20 ev-ery hour he works up to a total of 40 hours, after which he gets paid double that amount per hour. How much does Bill get paid for a 50-hour workweek?</cell></row><row><cell>factor loadings (word): F1 0.877, F2 -0.333</cell><cell>math form: Solve 20 × 40 + (2 × 20) × (50 -40).</cell></row><row><cell>factor loadings (math): F1 0.373, F2 0.112</cell><cell>answer: 1,200</cell></row><row><cell>word form: Darry is a roofer and has to climb ladders multiple times a day. He climbs his full ladder, which has 11 steps, 10 times today. He also climbs his smaller</cell><cell>factor loadings (word): F1 -0.080, F2 0.797 factor loadings (math): F1 0.727, F2 -0.231</cell></row><row><cell>ladder, which has 6 steps, 7 times today. He</cell><cell/></row><row><cell>did not climb any steps otherwise. In total,</cell><cell/></row><row><cell>how many times has Darry climbed a step</cell><cell/></row><row><cell>today? math form: Solve 11 × 10 + 6 × 7. answer: 152</cell><cell>word form: Steven is preparing a ship-ment of boxes to deliver to a customer for his chemical supply business. The prod-ucts are very delicate and must be carefully packed, so partially filled boxes can't be</cell></row><row><cell>factor loadings (word): F1 0.667, F2 0.114 factor loadings (math): F1 0.417, F2 0.047</cell><cell>shipped. Steven has three trucks that can be sent on each delivery. Each truck can carry a load of no more than 2,000 pounds</cell></row><row><cell/><cell>of cargo. Some of the boxes weigh 10</cell></row><row><cell>word form: Shannon bought 5 pints of frozen yogurt, two packs of chewing gum, and five trays of jumbo shrimp from The Food Place for a total of $55 If the price of a tray of jumbo shrimp is $5 and a pack of chewing gum costs half as much as a pint of frozen yogurt, what is the price of a pint of frozen yogurt? math form: Solve 5  *  f rozen_yogurt_price + 2 × (f rozen_yogurt_price/2)+5×5-55 = 0 answer: 5</cell><cell>pounds after being packed, and some of the boxes weigh 40 pounds when packed. Steven's customer has ordered equal quanti-ties of both the lighter and heavier products. How many boxes of products can Steven ship to his customer in each delivery? math form: Calculate (101.8 × 10 6 × 1202 × 0.445)/(101.8 × 10 6 × 0.1) -math form: Solve 10 × x + 40 × y = 6000, x = y and calculate x + y. (101.8 × 10 6 × 1202 × 0.011)/(101.8 × 10 6 × 0.1). answer: 5216.68 factor loadings (word): F1 -0.339, F2 0.806 answer: 240 factor loadings (word): F1 -0.034, F2 0.525 factor loadings (math): F1 0.888, F2 -0.184</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 6 :</head><label>6</label><figDesc><div><p><s>Factor scores for top performing families of models in the ENEM dataset.</s><s>Values greater than the median are highlighted.</s></p></div></figDesc><table><row><cell>model</cell><cell>prompt</cell><cell>F1</cell><cell>F2</cell><cell>acc.</cell></row><row><cell>gemini-2.0-flash-exp gemini-1.5-flash gemini-1.5-flash-8b gemini-1.0-pro</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot</cell><cell>11.3 11.24 11.3 11.3 4.18 6.69 9.05 10.9 3.24 12.14 3.8 11.52 4.96 7.31 5.43 8.06</cell><cell>12.76 12.26 12.76 12.76 7.05 8.33 9.8 8.45 0.41 5.37 0.95 5.38 1.18 2.17 0.48 1.65</cell><cell>76 74 76 76 37 52 53 62 19 58 19 55 21 33 22 31</cell></row><row><cell>Qwen2.5-14B-Instruct Qwen2.5-7B-Instruct Qwen2.5-Math-PRM-7B Qwen2.5-Math-7B-PRM800K Qwen2.5-7B Qwen2.5-Math-1.5B-Instruct Qwen2.5-3B-Instruct</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot</cell><cell>9.96 11.78 12.12 11.68 12.46 12.21 12.02 12.58 9.65 8.99 10.55 10.19 9.95 10.11 10.1 10.12 2.17 7.86 9.9 10.18 1.96 8.54 8.13 7.1 0.62 2.32 9.89 10.72</cell><cell>8.2 9.58 8.82 8.19 7.54 6.65 5.4 5.42 7.06 9.07 6.9 6.92 5.24 8.08 7.04 7.7 0.64 0.97 2.99 2.62 0.74 0.58 0.69 0.05 0.94 1.06 2.91 1.94</cell><cell>57 67 64 62 63 56 56 58 51 53 59 57 48 56 55 58 13 28 45 44 13 28 35 32 7 14 45 42</cell></row><row><cell>DeepSeek-R1-Distill-Qwen-14B DeepSeek-R1-Distill-Qwen-7B deepseek-math-7b-instruct DeepSeek-R1-Distill-Qwen-1.5B DeepSeek-R1-Distill-Llama-8B</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot</cell><cell>9.05 8.45 12.39 11.17 7.56 8.34 10.85 10.91 8.49 8.11 7.93 7.93 8.4 6.58 9.74 7.14 4.4</cell><cell>3.28 2.66 6.14 5.21 0.54 2.4 5.83 3.37 0.83 0.65 0.38 0.38 0.55 1.64 1.23 0.35 0.76</cell><cell>49 36 57 52 28 34 52 44 33 32 32 31 29 28 31 23 19</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 7 :</head><label>7</label><figDesc><div><p><s>Factor scores for bottom performing families of models in the ENEM dataset.</s><s>Values greater than the median are highlighted.</s></p></div></figDesc><table><row><cell>model</cell><cell>prompt</cell><cell>F1</cell><cell>F2</cell><cell>acc.</cell></row><row><cell>DeepSeek-R1-Distill-Llama-8B</cell><cell>0-shot-cot</cell><cell>7.87</cell><cell>1.91</cell><cell>32</cell></row><row><cell>NuminaMath-7B-CoT NuminaMath-7B-TIR</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot</cell><cell>8.06 7.43 9.32 9.33 1.94 5.79 8.25</cell><cell>2.68 1.89 2.29 2.2 0.19 -0.28 2.15</cell><cell>31 29 39 39 13 21 33</cell></row><row><cell>Falcon3-7B-Base Falcon3-7B-Instruct Falcon3-3B-Instruct</cell><cell>2-shot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot</cell><cell>6.5 1.41 1.7 9.59 12.17 0.44 4.65 7.16 8.83</cell><cell>0.74 1.14 0.74 2.78 4.59 0.43 0.94 0.94 1.19</cell><cell>31 12 14 43 50 9 26 34 38</cell></row><row><cell>Phi-3-mini-4k-instruct phi-4 phi-2</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot</cell><cell>7.95 9.59 10.39 7.79 1.01 0.7 2.79 8.58 -0.28 1.52 2.77 3.52</cell><cell>0.86 1.48 3.96 2.77 0.36 0.17 4.5 6.25 0.61 -0.17 -0.11 -0.25</cell><cell>36 43 42 38 8 7 28 49 1 2 14 15</cell></row><row><cell>gemma-2-9b-it gemma-2-2b-it gemma-2-9b gemma-2-2b</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot 0-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot</cell><cell>9.5 11.42 8.47 11.05 3.95 1.51 2.2 0.32 0.32 2.63 2.68</cell><cell>1.75 5.09 3.95 3.18 0.18 0.05 0.01 -0.01 -0.01 -0.35 -0.21</cell><cell>34 47 41 45 16 9 10 4 2 9 10</cell></row><row><cell>Mistral-Nemo-Instruct-2407 Mathstral-7b-v0.1 Mistral-7B-Instruct-v0.2 Mistral-7B-v0.3 Mistral-7B-Instruct-v0.1</cell><cell>0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 2-shot-cot 0-shot 0-shot-cot 2-shot 0-shot 0-shot-cot 2-shot 2-shot-cot</cell><cell>6.33 6.61 8.45 7.37 4.44 4.53 5.74 6.04 1.31 1.1 1.54 3.03 0.0 1.62 2.34 0.0 0.99 0.32 0.62</cell><cell>0.56 1.13 0.76 2.72 2.33 2.56 1.1 1.44 0.34 0.53 0.24 0.8 0.0 -0.39 -0.25 0.0 0.31 -0.01 0.29</cell><cell>30 28 35 36 29 27 26 28 5 8 10 15 5 6 14 3 8 7 7</cell></row><row><cell>Meta-Llama-3-8B</cell><cell>0-shot 0-shot-cot 2-shot</cell><cell>0.32 1.07 2.76</cell><cell>-0.01 -0.15 0.12</cell><cell>4 4 9</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0"><p><s>Dataset released under the MIT License.</s><s>As per https:// huggingface.co/datasets/openai/gsm8k,</s><s>the dataset was created to support the task of question answering on basic mathematical problems that require multi-step reasoning</s></p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_1"><p><s>College-admission level questions are typically harder than grade-school level questions</s></p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p><s>This work is partially supported by the <rs type="funder">Brazilian agencies CNPq</rs>, <rs type="funder">CAPES</rs>, and <rs type="funder">Fapemig</rs>, by the projects <rs type="projectName">CIIA-Saude</rs> and <rs type="projectName">IAIA-INCT on AI</rs>, by <rs type="funder">NSF</rs> grants <rs type="grantNumber">CNS-2312711</rs> and <rs type="grantNumber">CNS-2319369</rs>, gifts by <rs type="funder">Google and Microsoft</rs>.</s></p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funded-project" xml:id="_BvkVnaC">
+					<orgName type="project" subtype="full">CIIA-Saude</orgName>
+				</org>
+				<org type="funded-project" xml:id="_tKK3qdF">
+					<idno type="grant-number">CNS-2312711</idno>
+					<orgName type="project" subtype="full">IAIA-INCT on AI</orgName>
+				</org>
+				<org type="funding" xml:id="_e8g6BY4">
+					<idno type="grant-number">CNS-2319369</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A Prompts</head><p><s>In this section we show the prompts we have used to produce the results of the paper.</s><s>Prompts used to create the math forms of the word questions were submitted against GPT-4.</s></p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D GSM8K Plots</head><p><s>In this section we show the plots and tables for the GSM8K benchmark that were omitted in the main text due to space constraints.</s></p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">DUnE: Dataset for unified editing</title>
+		<author>
+			<persName><forename type="first">Afra</forename><surname>Akyürek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Eric</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Garry</forename><surname>Kuwanto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Derry</forename><surname>Wijaya</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2023.emnlp-main.114</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing</title>
+		<meeting>the 2023 Conference on Empirical Methods in Natural Language Processing<address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2023">2023</date>
+			<biblScope unit="page" from="1847" to="1861"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Bluex: A benchmark based on brazilian leading universities entrance exams</title>
+		<author>
+			<persName><forename type="first">Thales</forename><surname>Sales Almeida</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Thiago</forename><surname>Laitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Giovana</forename><forename type="middle">K</forename><surname>Bonás</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rodrigo</forename><surname>Nogueira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Brazilian Conference on Intelligent Systems</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2023">2023</date>
+			<biblScope unit="page" from="337" to="347"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<author>
+			<persName><forename type="first">Ryan</forename><surname>Burnell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Han</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Andrew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jose</forename><surname>Conway</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Orallo</forename><surname>Hernandez</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2306.10062</idno>
+		<title level="m">Revealing the structure of language model capabilities</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Rethink reporting of evaluation results in ai</title>
+		<author>
+			<persName><forename type="first">Ryan</forename><surname>Burnell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Wout</forename><surname>Schellaert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">John</forename><surname>Burden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Tomer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Fernando</forename><surname>Ullman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Joshua</forename><forename type="middle">B</forename><surname>Martinez-Plumed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Danaja</forename><surname>Tenenbaum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lucy</forename><forename type="middle">G</forename><surname>Rutar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jascha</forename><surname>Cheke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Melanie</forename><surname>Sohl-Dickstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Douwe</forename><surname>Mitchell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Murray</forename><surname>Kiela</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ellen</forename><forename type="middle">M</forename><surname>Shanahan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Anthony</forename><forename type="middle">G</forename><surname>Voorhees</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Joel</forename><forename type="middle">Z</forename><surname>Cohn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jose</forename><surname>Leibo</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Hernandez-Orallo</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.adf6369</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">380</biblScope>
+			<biblScope unit="issue">6641</biblScope>
+			<biblScope unit="page" from="136" to="138"/>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Can llms reason abstractly over math word problems without cot? disentangling abstract formulation from arithmetic computation</title>
+		<author>
+			<persName><forename type="first">Ziling</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Meng</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Leila</forename><surname>Pishdad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yanshuai</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jackie</forename><surname>Chi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kit</forename><surname>Cheung</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2505.23701</idno>
+		<imprint>
+			<date type="published" when="2025">2025</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Mathwell: Generating educational math word problems using teacher annotations</title>
+		<author>
+			<persName><forename type="first">Bryan</forename><surname>Christ</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jonathan</forename><surname>Kropko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Thomas</forename><surname>Hartvigsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Findings of the Association for Computational Linguistics: EMNLP 2024</title>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+			<biblScope unit="page" from="11914" to="11938"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Training verifiers to solve math word problems</title>
+		<author>
+			<persName><forename type="first">Karl</forename><surname>Cobbe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Vineet</forename><surname>Kosaraju</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mohammad</forename><surname>Bavarian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mark</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Heewoo</forename><surname>Jun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lukasz</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Matthias</forename><surname>Plappert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jerry</forename><surname>Tworek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jacob</forename><surname>Hilton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Reiichiro</forename><surname>Nakano</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2110.14168</idno>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Coefficient alpha and the internal structure of tests</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Cronbach</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">psychometrika</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="297" to="334"/>
+			<date type="published" when="1951">1951</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Word problems: A review of linguistic and numerical factors contributing to their difficulty</title>
+		<author>
+			<persName><forename type="first">Gabriella</forename><surname>Daroczy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Magdalena</forename><surname>Wolska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Walt</forename><forename type="middle">Detmar</forename><surname>Meurers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hans-Christoph</forename><surname>Nuerk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Frontiers in psychology</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">348</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Understanding and using factor scores: Considerations for the applied researcher</title>
+		<author>
+			<persName><forename type="first">Christine</forename><surname>Distefano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Min</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Diana</forename><surname>Mindrila</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Practical assessment, research, and evaluation</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">20</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Faith and fate: Limits of transformers on compositionality</title>
+		<author>
+			<persName><forename type="first">Nouha</forename><surname>Dziri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ximing</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Melanie</forename><surname>Sclar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lorraine</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Liwei</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bill</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sean</forename><surname>Yuchen Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Peter</forename><surname>Welleck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chandra</forename><surname>West</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ronan</forename><surname>Bhagavatula</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Le Bras</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Hardmath: A benchmark dataset for challenging problems in applied mathematics</title>
+		<author>
+			<persName><forename type="first">Jingxuan</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sarah</forename><surname>Martinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Erik</forename><forename type="middle">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kaylie</forename><surname>Hausknecht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jonah</forename><surname>Brenner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Danxian</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nianli</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Corey</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Michael</forename><forename type="middle">P</forename><surname>Brenner</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2410.09988</idno>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Program factor at 10: Origins, development and future directions</title>
+		<author>
+			<persName><forename type="first">Joan</forename><surname>Pere</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Urbano</forename><surname>Ferrando</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Lorenzo-Seva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Psicothema</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="236" to="240"/>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Exploratory Factor Analysis</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">Holmes</forename><surname>Finch</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-94-6209-404-8_8</idno>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<publisher>SensePublishers</publisher>
+			<biblScope unit="page" from="167" to="186"/>
+			<pubPlace>Rotterdam</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Reasoning in large language models through symbolic math word problems</title>
+		<author>
+			<persName><forename type="first">Vedant</forename><surname>Gaur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nikunj</forename><surname>Saunshi</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2023.findings-acl.364</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Findings of the Association for Computational Linguistics: ACL 2023</title>
+		<meeting><address><addrLine>Toronto, Canada</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2023">2023</date>
+			<biblScope unit="page" from="5889" to="5903"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Unidimensionality and interpretability of psychological instruments</title>
+		<author>
+			<persName><forename type="first">Jan-Eric</forename><surname>Gustafsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lisbeth</forename><surname>Åberg-Bengtsson</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">Solving math word problems by combining language models with symbolic solvers</title>
+		<author>
+			<persName><forename type="first">Joy</forename><surname>He-Yueya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Gabriel</forename><surname>Poesia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rose</forename><forename type="middle">E</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Noah</forename><forename type="middle">D</forename><surname>Goodman</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2304.09102</idno>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<author>
+			<persName><forename type="first">Dan</forename><surname>Hendrycks</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Collin</forename><surname>Burns</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Saurav</forename><surname>Kadavath</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Akul</forename><surname>Arora</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Steven</forename><surname>Basart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Eric</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dawn</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jacob</forename><surname>Steinhardt</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2103.03874</idno>
+		<title level="m">Measuring mathematical problem solving with the math dataset</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<author>
+			<persName><forename type="first">Arian</forename><surname>Hosseini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Alessandro</forename><surname>Sordoni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Daniel</forename><surname>Toyama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Aaron</forename><surname>Courville</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rishabh</forename><surname>Agarwal</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2410.01748</idno>
+		<title level="m">Not all llm reasoners are created equal</title>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">Microdados do Enem</title>
+		<imprint>
+			<date type="published" when="2025">2025. 2025</date>
+			<publisher>Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Cognitive processes, linguistic factors, and arithmetic word problem success: a review of behavioral studies</title>
+		<author>
+			<persName><forename type="first">Joshua</forename><surname>Benjamin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jaffe</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Donald</forename><forename type="middle">Joseph</forename><surname>Bolger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Educational Psychology Review</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">105</biblScope>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<author>
+			<persName><forename type="first">Kuei-Chun</forename><surname>Kao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ruochen</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Cho-Jui</forename><surname>Hsieh</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2407.05134</idno>
+		<title level="m">Solving for x and beyond: Can large language models solve complex math problems with more-than-two unknowns?</title>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Mawps: A math word problem repository</title>
+		<author>
+			<persName><forename type="first">Rik</forename><surname>Koncel-Kedziorski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Subhro</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Aida</forename><surname>Amini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nate</forename><surname>Kushman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hannaneh</forename><surname>Hajishirzi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2016 conference of the north american chapter of the association for computational linguistics: human language technologies</title>
+		<meeting>the 2016 conference of the north american chapter of the association for computational linguistics: human language technologies</meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="1152" to="1157"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Intuitive vs analytical thinking: Four perspectives</title>
+		<author>
+			<persName><forename type="first">Uri</forename><surname>Leron</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Orit</forename><surname>Hazzan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Educational Studies in Mathematics</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page" from="263" to="278"/>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Zebralogic: On the scaling limits of llms for logical reasoning</title>
+		<author>
+			<persName><forename type="first">Ronan</forename><surname>Bill Yuchen Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kyle</forename><surname>Le Bras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ashish</forename><surname>Richardson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Radha</forename><surname>Sabharwal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Peter</forename><surname>Poovendran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yejin</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Choi</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2502.01100</idno>
+		<imprint>
+			<date type="published" when="2025">2025</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<author>
+			<persName><forename type="first">Bingbin</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sebastien</forename><surname>Bubeck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ronen</forename><surname>Eldan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Janardhan</forename><surname>Kulkarni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yuanzhi</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Anh</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rachel</forename><surname>Ward</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yi</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2312.09241</idno>
+		<title level="m">Tinygsm: achieving&gt; 80% on gsm8k with small language models</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Examining the behavior of llm architectures within the framework of standardized national exams in brazil</title>
+		<author>
+			<persName><forename type="first">Marcelo</forename><surname>Sartori Locatelli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Matheus</forename><surname>Prado Miranda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Igor</forename><forename type="middle">Joaquim</forename><surname>Da</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Silva</forename><surname>Costa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Matheus</forename><surname>Torres Prates</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Victor</forename><surname>Thomé</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mateus</forename><surname>Zaparoli Monteiro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tomas</forename><surname>Lacerda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Adriana</forename><surname>Pagano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Eduardo</forename><forename type="middle">Rios</forename><surname>Neto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Wagner</forename><surname>Meira</surname><genName>Jr</genName></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society</title>
+		<meeting>the AAAI/ACM Conference on AI, Ethics, and Society</meeting>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="879" to="890"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Factor: A computer program to fit the exploratory factor analysis model</title>
+		<author>
+			<persName><forename type="first">Urbano</forename><surname>Lorenzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">-Seva</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Pere</forename><forename type="middle">J</forename><surname>Ferrando</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Behavior research methods</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="88" to="91"/>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Sympy: symbolic computing in python</title>
+		<author>
+			<persName><forename type="first">Aaron</forename><surname>Meurer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Christopher</forename><forename type="middle">P</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mateusz</forename><surname>Paprocki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ondřej</forename><surname>Čertík</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Sergey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Matthew</forename><surname>Kirpichev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Amit</forename><surname>Rocklin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sergiu</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jason</forename><forename type="middle">K</forename><surname>Ivanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sartaj</forename><surname>Moore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Thilina</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sean</forename><surname>Rathnayake</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Brian</forename><forename type="middle">E</forename><surname>Vig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Richard</forename><forename type="middle">P</forename><surname>Granger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Francesco</forename><surname>Muller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Harsh</forename><surname>Bonazzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Shivam</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Fredrik</forename><surname>Vats</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Fabian</forename><surname>Johansson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Matthew</forename><forename type="middle">J</forename><surname>Pedregosa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Andy</forename><forename type="middle">R</forename><surname>Curry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Štěpán</forename><surname>Terrel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ashutosh</forename><surname>Roučka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Isuru</forename><surname>Saboo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sumith</forename><surname>Fernando</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Robert</forename><surname>Kulal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Anthony</forename><surname>Cimrman</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Scopatz</surname></persName>
+		</author>
+		<idno type="DOI">10.7717/peerj-cs.103</idno>
+	</analytic>
+	<monogr>
+		<title level="j">PeerJ Computer Science</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">e103</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Gsm-symbolic: Understanding the limitations of mathematical reasoning in large language models</title>
+		<author>
+			<persName><forename type="first">Iman</forename><surname>Mirzadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Keivan</forename><surname>Alizadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hooman</forename><surname>Shahrokhi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Oncel</forename><surname>Tuzel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Samy</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mehrdad</forename><surname>Farajtabar</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2410.05229</idno>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<author>
+			<persName><forename type="first">Felipe</forename><surname>Maia Polo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lucas</forename><surname>Weber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Leshem</forename><surname>Choshen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yuekai</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Gongjun</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mikhail</forename><surname>Yurochkin</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2402.14992</idno>
+		<title level="m">tinybenchmarks: evaluating llms with fewer examples</title>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">What makes mathematical word problem solving challenging? exploring the roles of word problem characteristics, text comprehension, and arithmetic skills</title>
+		<author>
+			<persName><forename type="first">Nonmanut</forename><surname>Pongsakdi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Anu</forename><surname>Kajamies</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Koen</forename><surname>Veermans</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kalle</forename><surname>Lertola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Marja</forename><surname>Vauras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Erno</forename><surname>Lehtinen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Zdm</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="33" to="44"/>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Reasoning about quantities in natural language</title>
+		<author>
+			<persName><forename type="first">Subhro</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tim</forename><surname>Vieira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dan</forename><surname>Roth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Transactions of the Association for Computational Linguistics</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="1" to="13"/>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<author>
+			<persName><forename type="first">Ruoqi</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sébastien</forename><surname>Bubeck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ronen</forename><surname>Eldan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yin</forename><surname>Tat Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yuanzhi</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yi</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2311.14737</idno>
+		<title level="m">Positional description matters for transformers arithmetic</title>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Factor analysis as a tool for survey analysis</title>
+		<author>
+			<persName><forename type="first">Noora</forename><surname>Shrestha</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">American journal of Applied Mathematics and statistics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="4" to="11"/>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Advances in automatically solving the enem</title>
+		<author>
+			<persName><forename type="first">Igor</forename><surname>Cataneo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Silveira</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Denis</forename><surname>Deratani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mauá</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2018 7th Brazilian Conference on Intelligent Systems (BRACIS)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="43" to="48"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">What makes math word problems challenging for LLMs?</title>
+		<author>
+			<persName><forename type="first">Aditya</forename><surname>Kv</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ekaterina</forename><surname>Srivatsa</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Kochmar</surname></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2024.findings-naacl.72</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Findings of the Association for Computational Linguistics: NAACL 2024</title>
+		<meeting><address><addrLine>Mexico City, Mexico</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2024">2024</date>
+			<biblScope unit="page" from="1138" to="1148"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Different complex word problems require different combinations of cognitive skills</title>
+		<author>
+			<persName><forename type="first">Anselm</forename><forename type="middle">R</forename><surname>Strohmaier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Frank</forename><surname>Reinhold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sarah</forename><surname>Hofer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Michal</forename><surname>Berkowitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Birgit</forename><surname>Vogel-Heuser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Kristina</forename><surname>Reiss</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Educational Studies in Mathematics</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="89" to="114"/>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<author>
+			<persName><forename type="first">Anselm</forename><surname>Robert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Strohmaier</forename></persName>
+		</author>
+		<title level="m">When reading meets mathematics: Using eye movements to analyze complex word problem solving</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+		<respStmt>
+			<orgName>Technische Universität München</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">Ph.D. thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">The use of cronbach's alpha when developing and reporting research instruments in science education</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Keith</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Taber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Research in science education</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="1273" to="1296"/>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">A comparison of selected empirical methods for assessing the structure of responses to test items</title>
+		<author>
+			<persName><forename type="first">Richard</forename><surname>Tate</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Applied Psychological Measurement</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="159" to="203"/>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Making sense of cronbach's alpha</title>
+		<author>
+			<persName><forename type="first">Mohsen</forename><surname>Tavakol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Reg</forename><surname>Dennick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International journal of medical education</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">53</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Dimensionality assessment of ordered polytomous items with parallel analysis</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Marieke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Urbano</forename><surname>Timmerman</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Lorenzo-Seva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Psychological methods</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">209</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">How to build a benchmark</title>
+		<author>
+			<persName><forename type="first">Jóakim</forename><forename type="middle">V</forename><surname>Kistowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jeremy</forename><forename type="middle">A</forename><surname>Arnold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Karl</forename><surname>Huppler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Klaus-Dieter</forename><surname>Lange</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">John</forename><forename type="middle">L</forename><surname>Henning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Paul</forename><surname>Cao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 6th ACM/SPEC international conference on performance engineering</title>
+		<meeting>the 6th ACM/SPEC international conference on performance engineering</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="333" to="336"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Word problems in mathematics education: A survey</title>
+		<author>
+			<persName><forename type="first">Lieven</forename><surname>Verschaffel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Stanislaw</forename><surname>Schukajlow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jon</forename><surname>Star</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Wim</forename><surname>Van Dooren</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Zdm</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="1" to="16"/>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Task characteristics associated with mathematical word problem-solving performance among elementary school-aged children: a systematic review and metaanalysis</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vessonen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Dahlberg</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Hellstrand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Widlund</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Korhonen</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Aunio</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Laine</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Educational Psychology Review</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">117</biblScope>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<author>
+			<persName><forename type="first">Shijie</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Xuefeng</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yixin</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tongshuang</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Pengfei</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2404.05692</idno>
+		<title level="m">Evaluating mathematical reasoning beyond accuracy</title>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Adversarial math word problem generation</title>
+		<author>
+			<persName><forename type="first">Roy</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chengxuan</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Junlin</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bhuwan</forename><surname>Dhingra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Findings of the Association for Computational Linguistics: EMNLP 2024</title>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+			<biblScope unit="page" from="5075" to="5093"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+		<title level="m" type="main">Errorradar: Benchmarking complex mathematical reasoning of multimodal large language models via error detection</title>
+		<author>
+			<persName><forename type="first">Yibo</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Shen</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jiahao</forename><surname>Huo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hang</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Boyan</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jiamin</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Xiong</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yi-Fan</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tianlong</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhendong</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2410.04509</idno>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Rationales for answers to simple math word problems confuse large language models</title>
+		<author>
+			<persName><forename type="first">Yidan</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mingfeng</forename><surname>Xue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dayiheng</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhenan</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">;</forename></persName>
+		</author>
+		<idno type="DOI">10.18653/v1/2024.findings-acl.524</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Findings of the Association for Computational Linguistics: ACL 2024</title>
+		<meeting><address><addrLine>Bangkok, Thailand</addrLine></address></meeting>
+		<imprint>
+			<publisher>Association for Computational Linguistics</publisher>
+			<date type="published" when="2024">2024</date>
+			<biblScope unit="page" from="8853" to="8869"/>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<title level="m" type="main">Multiple-choice questions are efficient and robust llm evaluators</title>
+		<author>
+			<persName><forename type="first">Ziyin</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lizhen</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhaokun</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hongkun</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rui</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2405.11966</idno>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<title level="m" type="main">Processbench: Identifying process errors in mathematical reasoning</title>
+		<author>
+			<persName><forename type="first">Chujie</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zhenru</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Beichen</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Runji</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Keming</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bowen</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dayiheng</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jingren</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Junyang</forename><surname>Lin</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2412.06559</idno>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<monogr>
+		<title level="m" type="main">Solving math word problems via cooperative reasoning induced language models</title>
+		<author>
+			<persName><forename type="first">Xinyu</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Junjie</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lin</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yuxiang</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ruyi</forename><surname>Gan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jiaxing</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yujiu</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2210.16257</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
